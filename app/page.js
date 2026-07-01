@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import Link from "next/link";
 import ShaderBackground from "@/components/ShaderBackground";
 import ThreeScene from "@/components/ThreeScene";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function HomePage() {
   useEffect(() => {
@@ -31,24 +34,7 @@ export default function HomePage() {
       </div>
 
       {/* Navigation */}
-      <header className="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm top-0 sticky z-50 h-20">
-        <nav className="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
-          <div className="font-title-lg text-title-lg font-bold text-on-surface dark:text-on-background tracking-tight">
-            Noventra Technologies
-          </div>
-          <div className="hidden md:flex items-center gap-xl">
-            <a className="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Home</a>
-            <a className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
-            <a className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
-            <a className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Industries</a>
-            <a className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
-            <a className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
-          </div>
-          <button className="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded-lg hover:opacity-80 active:scale-95 transition-all glow-button">
-            Get Started
-          </button>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <main>
         {/* Hero Section */}
@@ -58,16 +44,16 @@ export default function HomePage() {
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-lg leading-tight">
                 Building <span className="text-primary">secure, scalable</span> software for modern businesses.
               </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">
-                We engineering high-performance digital ecosystems that empower global enterprises and fast-growing startups with precision and agility.
+              <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-[32rem]">
+                We engineer high-performance digital ecosystems that empower global enterprises and fast-growing startups with precision and agility.
               </p>
               <div className="flex flex-wrap gap-md">
-                <button className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all">
+                <Link href="/contact" className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all">
                   Get a Quote
-                </button>
-                <button className="border border-outline-variant text-on-surface font-label-md text-label-md px-3xl py-md rounded-lg hover:bg-white/5 transition-all">
+                </Link>
+                <Link href="/services" className="border border-outline-variant text-on-surface font-label-md text-label-md px-3xl py-md rounded-lg hover:bg-white/5 transition-all">
                   Explore Solutions
-                </button>
+                </Link>
               </div>
             </div>
             <div className="relative aspect-square lg:h-[600px] w-full reveal active" style={{ transitionDelay: "200ms" }}>
@@ -173,60 +159,20 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <section className="py-3xl px-gutter text-center">
-          <div className="max-w-2xl mx-auto glass-panel p-3xl rounded-3xl reveal">
+          <div className="max-w-[42rem] mx-auto glass-panel p-3xl rounded-3xl reveal">
             <h2 className="font-display-md text-display-md mb-md">Ready to accelerate your growth?</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
               Our technical consultants are ready to map out your digital transformation journey.
             </p>
-            <button className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all">
+            <Link href="/contact" className="inline-block bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all">
               Get a Quote Today
-            </button>
+            </Link>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter py-3xl max-w-container-max mx-auto">
-          <div className="md:col-span-1">
-            <div className="font-headline-lg text-headline-lg font-bold text-primary mb-md">Noventra</div>
-            <p className="text-on-surface-variant text-body-md">Precision engineering for the next generation of software enterprise.</p>
-          </div>
-          <div>
-            <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">Services</h4>
-            <ul className="space-y-sm text-on-surface-variant">
-              <li><a className="hover:text-primary transition-colors" href="#">Custom Software</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Cloud Strategy</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">AI Engineering</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Digital Design</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">Company</h4>
-            <ul className="space-y-sm text-on-surface-variant">
-              <li><a className="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Refund Policy</a></li>
-              <li><a className="hover:text-primary transition-colors" href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">Contact</h4>
-            <p className="text-on-surface-variant text-body-md mb-md">
-              Near Obofour Church, Plot Fawoade,<br />Mamponteng, Ashanti Region, Ghana.
-            </p>
-            <a className="text-primary font-bold hover:underline underline-offset-4" href="mailto:info@noventra.tech">info@noventra.tech</a>
-          </div>
-        </div>
-        <div className="border-t border-outline-variant py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
-          <p className="text-on-surface-variant text-label-md">&copy; 2024 Noventra Technologies. All rights reserved. Accra, Ghana.</p>
-          <div className="flex gap-lg">
-            <a className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" href="#">public</a>
-            <a className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" href="#">hub</a>
-            <a className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" href="#">alternate_email</a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

@@ -1,9 +1,21 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Noventra Technologies | Secure & Scalable Software",
+  title: {
+    default: "Noventra Technologies | Software Development & IT Services in Ghana",
+    template: "%s | Noventra Technologies",
+  },
   description:
-    "We engineering high-performance digital ecosystems that empower global enterprises and fast-growing startups with precision and agility.",
+    "Noventra Technologies is a software development and technology solutions company in Ghana. We design, build, and maintain web applications, mobile apps, cloud platforms, and custom business software.",
+  keywords: [
+    "software development",
+    "IT services",
+    "Ghana",
+    "web development",
+    "mobile app development",
+    "cloud solutions",
+    "Noventra Technologies",
+  ],
 };
 
 export default function RootLayout({ children }) {
