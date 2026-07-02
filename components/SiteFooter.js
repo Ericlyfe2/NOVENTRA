@@ -2,110 +2,64 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-surface-container-lowest border-t border-outline-variant">
+    <footer className="bg-surface-container-lowest/50 border-t border-outline-variant">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-xl px-gutter py-3xl max-w-container-max mx-auto">
-        <div className="sm:col-span-2 lg:col-span-1">
-          <div className="font-headline-lg text-headline-lg font-bold text-primary mb-md">
+        <div className="space-y-lg">
+          <div className="font-headline-lg text-headline-lg font-bold text-primary">
             Noventra
           </div>
-          <p className="text-on-surface-variant text-body-md max-w-xs">
-            Precision engineering for the next generation of software
-            enterprise.
+          <p className="font-body-md text-body-md text-on-surface-variant max-w-xs">
+            Advancing enterprise engineering through precision software solutions and strategic technology architecture.
           </p>
+          <div className="font-label-md text-label-md text-on-surface-variant/60">
+            PALACE MALL, East Legon,<br />Greater Accra, GHANA
+          </div>
         </div>
         <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">
-            Services
-          </h4>
-          <ul className="space-y-sm text-on-surface-variant">
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/services#custom-software">
-                Custom Software
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/services#cloud-solutions">
-                Cloud Solutions
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/services#ai-applications">
-                AI Applications
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/services#ui-ux-design">
-                UI/UX Design
-              </Link>
-            </li>
+          <h5 className="font-title-lg text-title-lg text-on-surface mb-lg">Company</h5>
+          <ul className="space-y-md">
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/about">About Us</Link></li>
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/portfolio">Portfolio</Link></li>
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/services">Services</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">
-            Company
-          </h4>
-          <ul className="space-y-sm text-on-surface-variant">
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/about">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/privacy-policy">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/terms">
-                Terms &amp; Conditions
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:text-primary transition-colors" href="/refund-policy">
-                Refund &amp; Cancellation Policy
-              </Link>
-            </li>
+          <h5 className="font-title-lg text-title-lg text-on-surface mb-lg">Support</h5>
+          <ul className="space-y-md">
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/terms">Terms of Service</Link></li>
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/refund-policy">Refund Policy</Link></li>
           </ul>
         </div>
-        <div>
-          <h4 className="font-label-md text-label-md text-on-surface font-bold mb-lg uppercase tracking-wider">
-            Contact
-          </h4>
-          <p className="text-on-surface-variant text-body-md mb-md">
-            PALACE MALL, East Legon,
-            <br />
-            Greater Accra, GHANA.
-          </p>
-          <a
-            className="text-primary font-bold hover:underline underline-offset-4"
-            href="mailto:info@noventra.tech"
-          >
-            info@noventra.tech
-          </a>
+        <div className="space-y-lg">
+          <h5 className="font-title-lg text-title-lg text-on-surface">Newsletter</h5>
+          <p className="font-body-md text-body-md text-on-surface-variant">Stay updated with our technical journals.</p>
+          <div className="flex gap-0">
+            <input
+              className="bg-surface-container-high/50 border border-outline-variant/30 rounded-l-xl px-md py-sm w-full focus:outline-none focus:border-primary/50 text-on-surface placeholder:text-on-surface-variant/40"
+              placeholder="Email"
+              type="email"
+              aria-label="Email for newsletter"
+            />
+            <button className="bg-primary text-on-primary px-lg rounded-r-xl hover:opacity-90 font-label-md transition-all">
+              Join
+            </button>
+          </div>
         </div>
       </div>
-      <div className="border-t border-outline-variant py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md text-center md:text-left">
-        <p className="text-on-surface-variant text-label-md">
-          &copy; {new Date().getFullYear()} Noventra Technologies. All rights
-          reserved. East Legon, Greater Accra, GHANA.
-        </p>
-        <div className="flex gap-lg">
-          <a
-            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hover:scale-110"
-            href="https://www.linkedin.com/company/noventra-technologies"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            public
-          </a>
-          <a
-            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hover:scale-110"
-            href="mailto:info@noventra.tech"
-            aria-label="Email"
-          >
-            alternate_email
-          </a>
+      <div className="border-t border-outline-variant/50 py-lg">
+        <div className="max-w-container-max mx-auto px-gutter flex flex-col sm:flex-row justify-between items-center gap-md">
+          <p className="font-body-md text-body-md text-on-surface-variant/60 text-sm">
+            &copy; {new Date().getFullYear()} Noventra Technologies. All rights reserved. Accra, Ghana.
+          </p>
+          <div className="flex gap-lg">
+            <a className="text-on-surface-variant/60 hover:text-primary transition-colors" href="https://www.linkedin.com/company/noventra-technologies" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <span className="material-symbols-outlined text-[20px]">public</span>
+            </a>
+            <a className="text-on-surface-variant/60 hover:text-primary transition-colors" href="mailto:info@noventra.tech" aria-label="Email">
+              <span className="material-symbols-outlined text-[20px]">alternate_email</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
