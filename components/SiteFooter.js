@@ -29,6 +29,7 @@ export default function SiteFooter() {
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/privacy-policy">Privacy Policy</Link></li>
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/terms">Terms of Service</Link></li>
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/refund-policy">Refund Policy</Link></li>
+            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/payment">Make a Payment</Link></li>
           </ul>
         </div>
         <div className="space-y-lg">

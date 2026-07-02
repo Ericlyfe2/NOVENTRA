@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/industries", label: "Industries" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/payment", label: "Pay" },
   { href: "/contact", label: "Contact" },
 ];
 
