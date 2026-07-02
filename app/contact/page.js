@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ShaderBackground from "@/components/ShaderBackground";
 import ContactForm from "@/components/ContactForm";
+import GhanaTime from "@/components/GhanaTime";
 
 export const metadata = {
   title: "Contact Us",
@@ -76,29 +77,24 @@ export default function ContactPage() {
 
         <section className="max-w-container-max mx-auto px-gutter pb-3xl">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-lg">
-            <div className="md:col-span-8 h-[300px] md:h-[450px] relative rounded-lg overflow-hidden border border-white/5 group">
-              <div className="absolute inset-0 bg-surface-container-low flex items-center justify-center">
-                <div className="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-1000" style={{ backgroundImage: "url('/images/map-east-legon.png')" }} />
-                <div className="absolute top-lg left-lg glass-panel p-md rounded border border-primary/20 backdrop-blur-md">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-label-md text-label-md text-primary font-bold">PALACE MALL</span>
-                    <span className="font-code-sm text-code-sm text-on-surface opacity-80">East Legon, Accra</span>
-                  </div>
-                </div>
-                <div className="absolute bottom-lg right-lg glass-panel p-md rounded border border-white/10">
-                  <div className="flex items-center gap-sm">
-                    <span className="material-symbols-outlined text-primary">location_on</span>
-                    <span className="font-code-sm text-code-sm text-on-surface">5.6366° N, 0.1533° W</span>
-                  </div>
+            <div className="md:col-span-8 h-[300px] md:h-[450px] relative rounded-lg overflow-hidden border border-white/5">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1733%2C5.6166%2C-0.1333%2C5.6566&layer=mapnik&marker=5.6366%2C-0.1533"
+                title="Map of Palace Mall, East Legon, Greater Accra, Ghana"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="absolute top-lg left-lg glass-panel p-md rounded border border-primary/20 backdrop-blur-md pointer-events-none">
+                <div className="flex flex-col gap-1">
+                  <span className="font-label-md text-label-md text-primary font-bold">PALACE MALL</span>
+                  <span className="font-code-sm text-code-sm text-on-surface opacity-80">East Legon, Accra</span>
                 </div>
               </div>
             </div>
             <div className="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-lg">
-              <div className="glass-panel p-xl rounded-lg flex flex-col justify-center">
-                <p className="font-label-md text-label-md text-primary mb-sm">Timezone</p>
-                <h3 className="font-display-md text-display-md text-on-surface">GMT +0</h3>
-                <p className="font-body-md text-body-md text-on-surface-variant">Operating 08:00 — 18:00</p>
-              </div>
+              <GhanaTime />
               <div className="glass-panel p-xl rounded-lg flex flex-col justify-center relative overflow-hidden group">
                 <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
                   <span className="material-symbols-outlined text-[160px]">hub</span>

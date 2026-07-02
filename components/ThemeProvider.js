@@ -36,18 +36,19 @@ export default function ThemeProvider({ children }) {
     setRipple({ x, y });
     setTransitioning(true);
 
-    requestAnimationFrame(() => {
+    // Swap the theme while the spiral covers the screen (~35% into the animation)
+    setTimeout(() => {
       const next = theme === "dark" ? "light" : "dark";
       setTheme(next);
       localStorage.setItem("theme", next);
       document.documentElement.classList.toggle("dark", next === "dark");
+    }, 350);
 
-      setTimeout(() => {
-        setTransitioning(false);
-        setRipple(null);
-        transitionLock.current = false;
-      }, 600);
-    });
+    setTimeout(() => {
+      setTransitioning(false);
+      setRipple(null);
+      transitionLock.current = false;
+    }, 1000);
   }, [theme]);
 
   const contextValue = useMemo(() => ({ theme, toggleTheme, transitioning }), [theme, toggleTheme, transitioning]);
@@ -56,13 +57,14 @@ export default function ThemeProvider({ children }) {
     <ThemeContext.Provider value={contextValue}>
       {ripple && (
         <div
-          className="theme-transition-overlay active"
-          style={{
-            left: ripple.x,
-            top: ripple.y,
-            transformOrigin: `${ripple.x}px ${ripple.y}px`,
-          }}
-        />
+          className="theme-spiral-overlay"
+          style={{ "--spiral-x": `${ripple.x}px`, "--spiral-y": `${ripple.y}px` }}
+          aria-hidden="true"
+        >
+          <div className="theme-spiral-flash" />
+          <div className="theme-spiral-arms-reverse" />
+          <div className="theme-spiral-arms" />
+        </div>
       )}
       {children}
     </ThemeContext.Provider>

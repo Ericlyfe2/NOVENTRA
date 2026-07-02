@@ -332,32 +332,74 @@ html.ready *, html.ready *::before, html.ready *::after {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.theme-transition-overlay {
+.theme-spiral-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-spiral-overlay > * {
+  position: absolute;
+  top: var(--spiral-y);
+  left: var(--spiral-x);
+  width: 240vmax;
+  height: 240vmax;
+  margin-top: -120vmax;
+  margin-left: -120vmax;
   border-radius: 50%;
-  transform: scale(0);
-  background: var(--color-background);
+  will-change: transform, opacity;
 }
 
-.theme-transition-overlay.active {
-  animation: themeExpand 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.theme-spiral-arms {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(77, 142, 255, 0) 0deg,
+    rgba(77, 142, 255, 0.55) 18deg,
+    rgba(173, 198, 255, 0.95) 30deg,
+    rgba(216, 226, 255, 0.6) 38deg,
+    rgba(77, 142, 255, 0) 60deg
+  );
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0) 72%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 35%, rgba(0,0,0,0) 72%);
+  animation: spiralSpin 1s cubic-bezier(0.3, 0, 0.2, 1) forwards;
 }
 
-@keyframes themeExpand {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
+.theme-spiral-arms-reverse {
+  background: repeating-conic-gradient(
+    from 90deg,
+    rgba(29, 78, 216, 0) 0deg,
+    rgba(37, 99, 235, 0.5) 22deg,
+    rgba(147, 197, 253, 0.85) 34deg,
+    rgba(29, 78, 216, 0) 72deg
+  );
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0) 68%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0) 68%);
+  animation: spiralSpinReverse 1s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+}
+
+.theme-spiral-flash {
+  background: radial-gradient(circle, rgba(216, 226, 255, 0.95) 0%, rgba(77, 142, 255, 0.5) 22%, rgba(77, 142, 255, 0) 55%);
+  animation: spiralFlash 1s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+}
+
+@keyframes spiralSpin {
+  0% { transform: rotate(0deg) scale(0); opacity: 1; }
+  55% { opacity: 1; }
+  100% { transform: rotate(720deg) scale(1.1); opacity: 0; }
+}
+
+@keyframes spiralSpinReverse {
+  0% { transform: rotate(0deg) scale(0); opacity: 0.9; }
+  55% { opacity: 0.9; }
+  100% { transform: rotate(-540deg) scale(1); opacity: 0; }
+}
+
+@keyframes spiralFlash {
+  0% { transform: scale(0); opacity: 1; }
+  45% { opacity: 0.9; }
+  100% { transform: scale(0.9); opacity: 0; }
 }
 
 @keyframes float {
