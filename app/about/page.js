@@ -37,7 +37,7 @@ export default function AboutPage() {
     >
       <section className="px-gutter pb-3xl">
         <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-xl">
-          <div className="lg:col-span-8 glass-panel p-3xl rounded-3xl">
+          <div className="lg:col-span-8 glass-panel p-3xl rounded-lg">
             <h2 className="font-headline-lg text-headline-lg mb-lg">Company Overview</h2>
             <p className="font-body-lg text-body-lg text-on-surface mb-lg">
               Noventra Technologies is a software development and technology
@@ -59,7 +59,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-lg">
-            <div className="glass-panel p-xl rounded-3xl flex-1">
+            <div className="glass-panel p-xl rounded-lg flex-1">
               <h3 className="font-title-lg text-title-lg text-primary mb-sm">Our Mission</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 To empower businesses of every size with secure, scalable, and
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 growth opportunities.
               </p>
             </div>
-            <div className="glass-panel p-xl rounded-3xl flex-1">
+            <div className="glass-panel p-xl rounded-lg flex-1">
               <h3 className="font-title-lg text-title-lg text-primary mb-sm">Our Vision</h3>
               <p className="font-body-md text-body-md text-on-surface-variant">
                 To be a leading African technology partner known for precision
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <h2 className="font-headline-lg text-headline-lg mb-xl text-center">Why Choose Noventra</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
             {VALUES.map((value) => (
-              <div key={value.title} className="glass-panel p-xl rounded-xl">
+              <div key={value.title} className="glass-panel p-xl rounded-lg">
                 <span className="material-symbols-outlined text-primary text-3xl mb-md">
                   {value.icon}
                 </span>

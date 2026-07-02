@@ -14,6 +14,7 @@ export default function ThemeProvider({ children }) {
   const [transitioning, setTransitioning] = useState(false);
   const [ripple, setRipple] = useState(null);
   const mounted = useRef(false);
+  const transitionLock = useRef(false);
 
   useEffect(() => {
     mounted.current = true;
@@ -30,6 +31,8 @@ export default function ThemeProvider({ children }) {
   }, []);
 
   const toggleTheme = useCallback((x, y) => {
+    if (transitionLock.current) return;
+    transitionLock.current = true;
     setRipple({ x, y });
     setTransitioning(true);
 
@@ -42,6 +45,7 @@ export default function ThemeProvider({ children }) {
       setTimeout(() => {
         setTransitioning(false);
         setRipple(null);
+        transitionLock.current = false;
       }, 600);
     });
   }, [theme]);

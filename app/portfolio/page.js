@@ -55,7 +55,7 @@ export default function PortfolioPage() {
       <section className="px-gutter pb-3xl">
         <div className="max-w-container-max mx-auto flex flex-col gap-xl">
           {PROJECTS.map((project) => (
-            <article key={project.title} className="glass-panel p-3xl rounded-3xl">
+            <article key={project.title} className="glass-panel p-3xl rounded-lg">
               <div className="flex items-center gap-md mb-lg">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
                   <span className="material-symbols-outlined text-primary">
@@ -92,7 +92,7 @@ export default function PortfolioPage() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="font-code-sm text-code-sm border border-outline-variant rounded-lg px-sm py-xs text-on-surface-variant"
+                      className="font-code-sm text-code-sm border border-outline-variant rounded px-sm py-xs text-on-surface-variant"
                     >
                       {tech}
                     </span>
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
       </section>
 
       <section className="px-gutter pb-3xl text-center">
-        <div className="max-w-[42rem] mx-auto glass-panel p-3xl rounded-3xl">
+        <div className="max-w-[42rem] mx-auto glass-panel p-3xl rounded-lg">
           <h2 className="font-headline-lg text-headline-lg mb-md">
             Have a project in mind?
           </h2>
@@ -115,7 +115,7 @@ export default function PortfolioPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all"
+            className="inline-block bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded glow-button transition-all"
           >
             Get a Quote
           </Link>

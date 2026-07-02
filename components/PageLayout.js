@@ -14,7 +14,7 @@ export default function PageLayout({ title, intro, children }) {
       <main>
         <section className="pt-3xl pb-xl px-gutter">
           <div className="max-w-container-max mx-auto">
-            <h1 className="font-display-md text-display-md mb-md">{title}</h1>
+            <h1 className="font-display-md text-display-md mb-md gradient-text inline-block">{title}</h1>
             {intro ? (
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-[42rem]">
                 {intro}

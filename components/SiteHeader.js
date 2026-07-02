@@ -71,7 +71,7 @@ export default function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden sm:inline-block bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded-lg hover:opacity-80 active:scale-95 transition-all glow-button"
+            className="hidden sm:inline-block bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded hover:opacity-80 active:scale-95 transition-all glow-button"
           >
             Get Started
           </Link>
@@ -80,7 +80,7 @@ export default function SiteHeader() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-outline-variant text-on-surface hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+            className="md:hidden flex items-center justify-center w-11 h-11 rounded border border-outline-variant text-on-surface hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
           >
             <span className="material-symbols-outlined transition-transform duration-300" style={{ transform: menuOpen ? "rotate(90deg)" : "" }}>
               {menuOpen ? "close" : "menu"}
@@ -91,7 +91,7 @@ export default function SiteHeader() {
 
       {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-[-1] bg-surface/98 backdrop-blur-xl animate-fade-in-up">
+        <div className="md:hidden absolute top-full left-0 right-0 h-[calc(100vh-4rem)] overflow-y-auto bg-surface animate-fade-in-up">
           <div className="flex flex-col gap-md px-gutter py-xl">
             {NAV_LINKS.map((link) => (
               <Link
@@ -110,7 +110,7 @@ export default function SiteHeader() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg text-center glow-button transition-all mt-md"
+              className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded text-center glow-button transition-all mt-md"
             >
               Get Started
             </Link>

@@ -102,7 +102,7 @@ export default function HomePage() {
           <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-3xl items-center py-3xl">
             <div className="reveal active">
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-lg leading-tight">
-                Building <span className="text-primary">secure, scalable</span> software for modern businesses.
+                Building <span className="gradient-text">secure, scalable</span> software for modern businesses.
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-[32rem]">
                 We engineer high-performance digital ecosystems that empower global enterprises and fast-growing startups with precision and agility.
@@ -110,19 +110,19 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-md">
                 <RippleButton
                   href="/contact"
-                  className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all active:scale-95"
+                  className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded glow-button transition-all active:scale-95"
                 >
                   Get a Quote
                 </RippleButton>
                 <MagneticButton
                   href="/services"
-                  className="border border-outline-variant text-on-surface font-label-md text-label-md px-3xl py-md rounded-lg hover:bg-white/5 dark:hover:bg-white/5 transition-all active:scale-95"
+                  className="border border-outline-variant text-on-surface font-label-md text-label-md px-3xl py-md rounded hover:bg-black/5 dark:hover:bg-white/5 transition-all active:scale-95"
                 >
                   Explore Solutions
                 </MagneticButton>
               </div>
             </div>
-            <div className="relative aspect-square w-full max-w-lg lg:max-w-none mx-auto lg:h-[600px] reveal active" style={{ transitionDelay: "200ms" }}>
+            <div className="relative aspect-square w-full max-w-[32rem] lg:max-w-none mx-auto lg:h-[600px] reveal active" style={{ transitionDelay: "200ms" }}>
               <div className="absolute inset-0 glass-panel rounded-full blur-3xl opacity-20 animate-pulse-glow" />
               <div className="w-full h-full relative z-10">
                 <ThreeScene />
@@ -157,14 +157,14 @@ export default function HomePage() {
         {/* Services Bento Grid */}
         <section className="py-3xl px-gutter max-w-container-max mx-auto">
           <div className="text-center mb-3xl reveal">
-            <h2 className="font-headline-lg text-headline-lg mb-sm">Comprehensive Tech Solutions</h2>
+            <h2 className="font-headline-lg text-headline-lg mb-sm gradient-text inline-block">Comprehensive Tech Solutions</h2>
             <p className="font-body-md text-body-md text-on-surface-variant">Leveraging the latest stack to solve complex technical challenges.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
             {CARDS.map((card, i) => (
               <div
                 key={i}
-                className="glass-panel p-xl rounded-xl hover:translate-y-[-8px] hover:shadow-xl hover:shadow-primary/5 dark:hover:shadow-primary/10 transition-all duration-300 reveal group"
+                className="glass-panel p-xl rounded-lg hover:translate-y-[-8px] hover:shadow-xl hover:shadow-primary/5 dark:hover:shadow-primary/10 transition-all duration-300 reveal group interactive-element"
                 style={{ transitionDelay: card.delay }}
               >
                 <span className="material-symbols-outlined text-primary text-3xl mb-md group-hover:scale-110 transition-transform duration-300 block">{card.icon}</span>
@@ -179,12 +179,12 @@ export default function HomePage() {
         <section className="py-3xl px-gutter relative overflow-hidden">
           <div className="max-w-container-max mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-xl">
-              <div className="lg:col-span-8 glass-panel p-xl md:p-3xl rounded-3xl reveal">
+              <div className="lg:col-span-8 glass-panel p-xl md:p-3xl rounded-lg reveal">
                 <div className="flex items-center gap-md mb-xl">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary">info</span>
                   </div>
-                  <h2 className="font-headline-lg text-headline-lg">About Noventra</h2>
+                  <h2 className="font-headline-lg text-headline-lg gradient-text">About Noventra</h2>
                 </div>
                 <p className="font-body-lg text-body-lg text-on-surface mb-xl">
                   Based at PALACE MALL, East Legon, Greater Accra, Noventra Technologies is a powerhouse of digital innovation. We combine local expertise with global standards to deliver software that doesn't just work, but drives industry evolution. Our commitment to precision engineering ensures that every line of code adds tangible value to your bottom line.
@@ -205,11 +205,11 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="lg:col-span-4 flex flex-col gap-lg">
-                <div className="glass-panel p-xl rounded-3xl flex-1 flex flex-col justify-center reveal" style={{ transitionDelay: "200ms" }}>
+                <div className="glass-panel p-xl rounded-lg flex-1 flex flex-col justify-center reveal" style={{ transitionDelay: "200ms" }}>
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-xs">99.9%</div>
                   <div className="font-label-md text-label-md text-on-surface-variant">System Uptime Guarantee</div>
                 </div>
-                <div className="glass-panel p-xl rounded-3xl flex-1 flex flex-col justify-center reveal" style={{ transitionDelay: "300ms" }}>
+                <div className="glass-panel p-xl rounded-lg flex-1 flex flex-col justify-center reveal" style={{ transitionDelay: "300ms" }}>
                   <div className="text-3xl md:text-4xl font-bold text-primary mb-xs">500+</div>
                   <div className="font-label-md text-label-md text-on-surface-variant">Successful Deployments</div>
                 </div>
@@ -220,14 +220,14 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <section className="py-3xl px-gutter text-center">
-          <div className="max-w-[42rem] mx-auto glass-panel p-xl md:p-3xl rounded-3xl reveal">
-            <h2 className="font-display-md text-display-md mb-md">Ready to accelerate your growth?</h2>
+          <div className="max-w-[42rem] mx-auto glass-panel p-xl md:p-3xl rounded-lg reveal interactive-element">
+            <h2 className="font-display-md text-display-md mb-md gradient-text inline-block">Ready to accelerate your growth?</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl">
               Our technical consultants are ready to map out your digital transformation journey.
             </p>
             <RippleButton
               href="/contact"
-              className="inline-block bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded-lg glow-button transition-all active:scale-95"
+              className="inline-block bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded glow-button transition-all active:scale-95"
             >
               Get a Quote Today
             </RippleButton>

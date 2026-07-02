@@ -21,7 +21,7 @@ export default function ThemeToggle() {
       onClick={handleClick}
       disabled={transitioning}
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative flex items-center justify-center w-11 h-11 rounded-xl border border-outline-variant text-on-surface hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 active:scale-90 overflow-hidden"
+      className="relative flex items-center justify-center w-11 h-11 rounded border border-outline-variant text-on-surface hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 active:scale-90 overflow-hidden"
     >
       <span
         className="material-symbols-outlined transition-all duration-500"

@@ -49,11 +49,11 @@ export default function ContactForm() {
   }
 
   const inputClass = (field) =>
-    `w-full bg-surface-container-lowest/50 border ${errors[field] ? "border-error" : "border-outline-variant/30"} rounded-xl px-md py-3 text-on-surface focus:outline-none input-glow transition-all duration-300 placeholder:text-on-surface-variant/30`;
+    `w-full bg-surface-container-lowest/50 border ${errors[field] ? "border-error" : "border-outline-variant/30"} rounded px-md py-3 text-on-surface focus:outline-none input-glow transition-all duration-300 placeholder:text-on-surface-variant/30`;
 
   if (status === "success") {
     return (
-      <div className="glass-panel p-3xl rounded-3xl text-center" role="status">
+      <div className="glass-panel p-3xl rounded-lg text-center" role="status">
         <span className="material-symbols-outlined text-primary text-4xl mb-md">
           mark_email_read
         </span>
@@ -65,7 +65,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="border border-outline-variant text-on-surface font-label-md text-label-md px-xl py-sm rounded-xl hover:bg-white/5 transition-all"
+          className="border border-outline-variant text-on-surface font-label-md text-label-md px-xl py-sm rounded hover:bg-black/5 dark:hover:bg-white/5 transition-all"
         >
           Send another message
         </button>
@@ -74,7 +74,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="glass-panel p-xl md:p-3xl rounded-3xl relative overflow-hidden">
+    <div className="glass-panel p-xl md:p-3xl rounded-lg relative overflow-hidden">
       <div className="mb-xl">
         <h2 className="font-headline-lg text-headline-lg text-on-surface mb-sm">Technical Inquiry</h2>
         <p className="font-body-md text-body-md text-on-surface-variant">
@@ -95,8 +95,8 @@ export default function ContactForm() {
               placeholder="John Doe"
               className={inputClass("name")}
               required
-              onFocus={(e) => e.target.closest("label")?.classList.add("text-primary")}
-              onBlur={(e) => e.target.closest("label")?.classList.remove("text-primary")}
+              onFocus={(e) => e.target.parentElement.querySelector("label")?.classList.add("text-primary")}
+              onBlur={(e) => e.target.parentElement.querySelector("label")?.classList.remove("text-primary")}
             />
             {errors.name && (
               <p className="text-error text-label-md mt-xs">{errors.name}</p>
@@ -114,8 +114,8 @@ export default function ContactForm() {
               placeholder="john@company.com"
               className={inputClass("email")}
               required
-              onFocus={(e) => e.target.closest("label")?.classList.add("text-primary")}
-              onBlur={(e) => e.target.closest("label")?.classList.remove("text-primary")}
+              onFocus={(e) => e.target.parentElement.querySelector("label")?.classList.add("text-primary")}
+              onBlur={(e) => e.target.parentElement.querySelector("label")?.classList.remove("text-primary")}
             />
             {errors.email && (
               <p className="text-error text-label-md mt-xs">{errors.email}</p>
@@ -159,7 +159,7 @@ export default function ContactForm() {
             <p className="text-error text-label-md mt-xs">{errors.message}</p>
           )}
         </div>
-        <div className="flex items-center gap-md p-md bg-primary/5 rounded-xl border border-primary/10">
+        <div className="flex items-center gap-md p-md bg-primary/5 rounded border border-primary/10">
           <span className="material-symbols-outlined text-primary text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>
           <p className="font-code-sm text-code-sm text-on-surface-variant/80">
             End-to-end encrypted submission via Noventra Security Protocol.
@@ -173,7 +173,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="w-full bg-primary text-on-primary font-title-lg text-title-lg py-lg rounded-xl glow-button spring-click transition-all flex items-center justify-center gap-md group disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-primary text-on-primary font-title-lg text-title-lg py-lg rounded glow-button spring-click transition-all flex items-center justify-center gap-md group disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === "submitting" ? "Sending…" : "Send Inquiry"}
           {status !== "submitting" && (

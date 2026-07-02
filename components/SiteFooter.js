@@ -8,7 +8,7 @@ export default function SiteFooter() {
           <div className="font-headline-lg text-headline-lg font-bold text-primary">
             Noventra
           </div>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-xs">
+          <p className="font-body-md text-body-md text-on-surface-variant max-w-[20rem]">
             Advancing enterprise engineering through precision software solutions and strategic technology architecture.
           </p>
           <div className="font-label-md text-label-md text-on-surface-variant/60">

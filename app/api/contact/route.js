@@ -15,13 +15,13 @@ export async function POST(request) {
 
   const name = (body.name || "").toString().trim();
   const email = (body.email || "").toString().trim();
-  const subject = (body.subject || "").toString().trim();
+  const service = (body.service || body.subject || "").toString().trim();
   const message = (body.message || "").toString().trim();
 
   const errors = {};
   if (!name) errors.name = "Please enter your name.";
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
-  if (!subject) errors.subject = "Please enter a subject.";
+  if (!service) errors.service = "Please select a service.";
   if (message.length < 10)
     errors.message = "Please describe your enquiry (at least 10 characters).";
 
@@ -37,7 +37,7 @@ export async function POST(request) {
       const res = await fetch(formspreeEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, service, message }),
       });
       if (!res.ok) throw new Error(`Formspree responded ${res.status}`);
     } catch (err) {
@@ -48,7 +48,7 @@ export async function POST(request) {
       );
     }
   } else {
-    console.log("Contact form submission:", { name, email, subject, message });
+    console.log("Contact form submission:", { name, email, service, message });
   }
 
   return NextResponse.json({ ok: true });

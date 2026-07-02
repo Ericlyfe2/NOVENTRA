@@ -24,7 +24,7 @@ export default function TermsPage() {
       intro="Effective date: 1 July 2026 · Last updated: 1 July 2026"
     >
       <div className="px-gutter pb-3xl">
-        <div className="max-w-[52rem] mx-auto glass-panel p-3xl rounded-3xl">
+        <div className="max-w-[52rem] mx-auto glass-panel p-3xl rounded-lg">
           <Section title="1. About These Terms">
             <p>
               These Terms &amp; Conditions (&quot;Terms&quot;) govern the use of
