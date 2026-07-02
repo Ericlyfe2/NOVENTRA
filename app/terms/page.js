@@ -110,8 +110,7 @@ export default function TermsPage() {
             <p>
               Questions or disputes regarding these Terms should be directed to:
               <br />
-              Noventra Technologies, Near Obofour Church, Plot Fawoade,
-              Mamponteng, Ashanti Region, Ghana
+              Noventra Technologies, PALACE MALL, East Legon, Greater Accra, GHANA
               <br />
               Email:{" "}
               <a

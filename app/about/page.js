@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 export const metadata = {
   title: "About Us",
   description:
-    "Noventra Technologies is a software development and technology solutions company based in the Ashanti Region, Ghana, serving startups, small businesses, and enterprises.",
+    "Noventra Technologies is a software development and technology solutions company based in Greater Accra, Ghana, serving startups, small businesses, and enterprises.",
 };
 
 const VALUES = [
@@ -47,7 +47,7 @@ export default function AboutPage() {
               businesses, and enterprises.
             </p>
             <p className="font-body-md text-body-md text-on-surface-variant mb-lg">
-              Based in Mamponteng, Ashanti Region, Ghana, we combine local
+              Based at PALACE MALL, East Legon, Greater Accra, GHANA, we combine local
               expertise with global engineering standards. Our teams serve
               clients across Education, Healthcare, Finance, Logistics, Retail,
               and Professional Services — delivering software that improves

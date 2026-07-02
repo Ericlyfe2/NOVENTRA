@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Noventra Technologies — Near Obofour Church, Plot Fawoade, Mamponteng, Ashanti Region, Ghana. We typically respond within 1–2 business days.",
+    "Get in touch with Noventra Technologies — PALACE MALL, East Legon, Greater Accra, GHANA. We typically respond within 1–2 business days.",
 };
 
 export default function ContactPage() {
@@ -27,9 +27,9 @@ export default function ContactPage() {
               <p className="font-body-md text-body-md text-on-surface-variant">
                 Noventra Technologies
                 <br />
-                Near Obofour Church, Plot Fawoade,
+                PALACE MALL, East Legon,
                 <br />
-                Mamponteng, Ashanti Region, Ghana.
+                Greater Accra, GHANA.
               </p>
             </div>
             <div className="glass-panel p-xl rounded-3xl">

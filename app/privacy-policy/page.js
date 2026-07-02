@@ -29,8 +29,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Noventra Technologies (&quot;Noventra&quot;, &quot;we&quot;,
               &quot;us&quot;) is a software development and technology solutions
-              company located at Near Obofour Church, Plot Fawoade, Mamponteng,
-              Ashanti Region, Ghana. This Privacy Policy explains how we
+              company located at PALACE MALL, East Legon, Greater Accra, GHANA. This Privacy Policy explains how we
               collect, use, store, and protect personal data when you use our
               website or engage our services.
             </p>
@@ -117,8 +116,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Noventra Technologies
               <br />
-              Near Obofour Church, Plot Fawoade, Mamponteng, Ashanti Region,
-              Ghana
+              PALACE MALL, East Legon, Greater Accra, GHANA
               <br />
               Email:{" "}
               <a

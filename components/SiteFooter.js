@@ -3,12 +3,12 @@ import Link from "next/link";
 export default function SiteFooter() {
   return (
     <footer className="bg-surface-container-lowest border-t border-outline-variant">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter py-3xl max-w-container-max mx-auto">
-        <div className="md:col-span-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-xl px-gutter py-3xl max-w-container-max mx-auto">
+        <div className="sm:col-span-2 lg:col-span-1">
           <div className="font-headline-lg text-headline-lg font-bold text-primary mb-md">
             Noventra
           </div>
-          <p className="text-on-surface-variant text-body-md">
+          <p className="text-on-surface-variant text-body-md max-w-xs">
             Precision engineering for the next generation of software
             enterprise.
           </p>
@@ -72,9 +72,9 @@ export default function SiteFooter() {
             Contact
           </h4>
           <p className="text-on-surface-variant text-body-md mb-md">
-            Near Obofour Church, Plot Fawoade,
+            PALACE MALL, East Legon,
             <br />
-            Mamponteng, Ashanti Region, Ghana.
+            Greater Accra, GHANA.
           </p>
           <a
             className="text-primary font-bold hover:underline underline-offset-4"
@@ -84,14 +84,14 @@ export default function SiteFooter() {
           </a>
         </div>
       </div>
-      <div className="border-t border-outline-variant py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+      <div className="border-t border-outline-variant py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md text-center md:text-left">
         <p className="text-on-surface-variant text-label-md">
           &copy; {new Date().getFullYear()} Noventra Technologies. All rights
-          reserved. Mamponteng, Ashanti Region, Ghana.
+          reserved. East Legon, Greater Accra, GHANA.
         </p>
         <div className="flex gap-lg">
           <a
-            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all"
+            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hover:scale-110"
             href="https://www.linkedin.com/company/noventra-technologies"
             target="_blank"
             rel="noopener noreferrer"
@@ -100,7 +100,7 @@ export default function SiteFooter() {
             public
           </a>
           <a
-            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all"
+            className="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all hover:scale-110"
             href="mailto:info@noventra.tech"
             aria-label="Email"
           >
