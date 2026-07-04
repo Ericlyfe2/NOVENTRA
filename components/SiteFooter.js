@@ -29,7 +29,12 @@ export default function SiteFooter() {
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/privacy-policy">Privacy Policy</Link></li>
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/terms">Terms of Service</Link></li>
             <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/refund-policy">Refund Policy</Link></li>
-            <li><Link className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="/payment">Make a Payment</Link></li>
+            <li>
+              <Link className="flex items-center gap-xs font-body-md text-body-md text-primary font-semibold hover:underline transition-all" href="/payment">
+                <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>credit_card</span>
+                Make a Payment
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="space-y-lg">

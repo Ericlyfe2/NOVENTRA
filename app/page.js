@@ -120,6 +120,15 @@ export default function HomePage() {
                 >
                   Explore Solutions
                 </MagneticButton>
+                <RippleButton
+                  href="/payment"
+                  className="flex items-center gap-sm bg-primary/10 border border-primary/30 text-primary font-label-md text-label-md px-3xl py-md rounded hover:bg-primary hover:text-on-primary transition-all active:scale-95"
+                >
+                  <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    credit_card
+                  </span>
+                  Pay Now via Paystack
+                </RippleButton>
               </div>
             </div>
             <div className="relative aspect-square w-full max-w-[32rem] lg:max-w-none mx-auto lg:h-[600px] reveal active" style={{ transitionDelay: "200ms" }}>

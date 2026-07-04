@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/industries", label: "Industries" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/payment", label: "Pay" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -72,9 +71,22 @@ export default function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="hidden sm:inline-block bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded hover:opacity-80 active:scale-95 transition-all glow-button"
+            className="hidden lg:inline-block border border-outline-variant text-on-surface font-label-md text-label-md px-lg py-sm rounded hover:bg-black/5 dark:hover:bg-white/5 active:scale-95 transition-all"
           >
             Get Started
+          </Link>
+          <Link
+            href="/payment"
+            className={`hidden sm:flex items-center gap-xs font-label-md text-label-md px-lg py-sm rounded active:scale-95 transition-all glow-button ${
+              isActive("/payment")
+                ? "bg-primary/80 text-on-primary"
+                : "bg-primary text-on-primary hover:opacity-80"
+            }`}
+          >
+            <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+              credit_card
+            </span>
+            Pay Now
           </Link>
           <button
             type="button"
@@ -109,9 +121,30 @@ export default function SiteHeader() {
               </Link>
             ))}
             <Link
+              href="/payment"
+              onClick={() => setMenuOpen(false)}
+              className={
+                isActive("/payment")
+                  ? "font-title-lg text-title-lg text-primary py-md border-b border-outline-variant/20"
+                  : "font-title-lg text-title-lg text-on-surface-variant hover:text-primary py-md border-b border-outline-variant/20 transition-colors"
+              }
+            >
+              Pay
+            </Link>
+            <Link
+              href="/payment"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-center gap-sm bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded text-center glow-button transition-all mt-md"
+            >
+              <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                credit_card
+              </span>
+              Pay Now
+            </Link>
+            <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="bg-primary text-on-primary font-label-md text-label-md px-3xl py-md rounded text-center glow-button transition-all mt-md"
+              className="border border-outline-variant text-on-surface font-label-md text-label-md px-3xl py-md rounded text-center transition-all"
             >
               Get Started
             </Link>

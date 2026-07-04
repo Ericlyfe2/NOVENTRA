@@ -1,5 +1,6 @@
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import PayNowFAB from "@/components/PayNowFAB";
 
 export const metadata = {
   title: {
@@ -51,7 +52,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <PayNowFAB />
+        </ThemeProvider>
       </body>
     </html>
   );
