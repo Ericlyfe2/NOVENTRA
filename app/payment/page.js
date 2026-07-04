@@ -66,6 +66,25 @@ export default function PaymentPage() {
                   See our <a href="/refund-policy" className="text-primary hover:underline">Refund Policy</a> for terms.
                 </p>
               </div>
+
+              <div className="glass-panel p-lg rounded-lg relative overflow-hidden">
+                <div className="flex items-center justify-between gap-md mb-sm">
+                  <div className="flex items-center gap-sm">
+                    <span className="material-symbols-outlined text-primary text-md">api</span>
+                    <span className="font-label-md text-label-md text-on-surface">Paystack Payment API</span>
+                  </div>
+                  <span className="inline-flex items-center gap-xs bg-primary/10 border border-primary/20 px-sm py-[2px] rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    <span className="font-label-md text-[10px] text-primary uppercase tracking-widest">Live</span>
+                  </span>
+                </div>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  Checkout runs on Paystack&apos;s official Transactions API —{" "}
+                  <span className="text-on-surface">Initialize</span> starts your session on our server, and{" "}
+                  <span className="text-on-surface">Verify</span>{" "}
+                  confirms the outcome before we mark it paid. No card data ever touches Noventra&apos;s servers.
+                </p>
+              </div>
             </div>
 
             <div className="lg:col-span-7 reveal-form">

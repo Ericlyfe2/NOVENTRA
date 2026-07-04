@@ -25,8 +25,14 @@ export async function GET(request) {
     const data = await res.json();
 
     if (!res.ok || !data.status) {
+      console.error("Paystack verify error:", data.type, data.code, data.message);
       return NextResponse.json(
-        { ok: false, error: data.message || "Could not verify transaction." },
+        {
+          ok: false,
+          error: data.message || "Could not verify transaction.",
+          code: data.code,
+          type: data.type,
+        },
         { status: 502 }
       );
     }

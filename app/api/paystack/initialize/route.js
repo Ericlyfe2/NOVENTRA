@@ -58,8 +58,14 @@ export async function POST(request) {
     const data = await res.json();
 
     if (!res.ok || !data.status) {
+      console.error("Paystack initialize error:", data.type, data.code, data.message);
       return NextResponse.json(
-        { ok: false, error: data.message || "Could not start the payment." },
+        {
+          ok: false,
+          error: data.message || "Could not start the payment.",
+          code: data.code,
+          type: data.type,
+        },
         { status: 502 }
       );
     }
