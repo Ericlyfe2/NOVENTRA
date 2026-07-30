@@ -57,13 +57,38 @@ export default function PaymentContent() {
       });
       const data = await res.json();
 
-      if (data.ok && data.authorizationUrl) {
+      if (!data.ok) {
+        setStatus("error");
+        setMessage(data.error || "The payment could not be started. Please try again.");
+        return;
+      }
+
+      const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY;
+
+      // Popup checkout keeps the customer on-page; fall back to the hosted
+      // redirect if no public key is configured for the inline library.
+      if (publicKey && data.accessCode) {
+        const { default: PaystackPop } = await import("@paystack/inline-js");
+        const popup = new PaystackPop();
+        popup.resumeTransaction(data.accessCode, {
+          onSuccess: (transaction) => {
+            window.location.href = `/payment/callback?reference=${encodeURIComponent(transaction.reference)}`;
+          },
+          onCancel: () => {
+            setStatus("idle");
+            setMessage("Checkout was closed before payment completed.");
+          },
+        });
+        return;
+      }
+
+      if (data.authorizationUrl) {
         window.location.href = data.authorizationUrl;
         return;
       }
 
       setStatus("error");
-      setMessage(data.error || "The payment could not be started. Please try again.");
+      setMessage("The payment could not be started. Please try again.");
     } catch {
       setStatus("error");
       setMessage("The payment could not be started. Please try again.");

@@ -73,6 +73,7 @@ export async function POST(request) {
     return NextResponse.json({
       ok: true,
       authorizationUrl: data.data.authorization_url,
+      accessCode: data.data.access_code,
       reference: data.data.reference,
     });
   } catch (err) {
