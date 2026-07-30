@@ -3,6 +3,10 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   const secretKey = process.env.PAYSTACK_SECRET_KEY;
   if (!secretKey) {
+    console.error(
+      "PAYSTACK_SECRET_KEY missing. Env keys containing PAYSTACK:",
+      Object.keys(process.env).filter((k) => k.includes("PAYSTACK"))
+    );
     return NextResponse.json(
       { ok: false, error: "Payment processing is not configured." },
       { status: 503 }
